@@ -1,0 +1,19 @@
+#gla-icon {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;  /* Make the icon circular */
+  background-color: white; /* Background color for better visibility */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: 0.7;  /* Transparency for idle state */
+  transition: opacity 0.3s;
+}
+
+#gla-icon:hover {
+  opacity: 1.0;  /* Full opacity on hover */
+}

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generative Learning Academy | Side Panel</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5f9ff;
+      font-family: 'Proxima Nova', sans-serif;
+    }
+    
+    #app {
+      background-color: white;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    .summary-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .summary-btn {
+      padding: 18px 32px;
+      font-size: 18px;
+      font-family: 'Proxima Nova', sans-serif;
+      font-weight: 600;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .summary-btn:hover {
+      background-color: #357abd;
+    }
+
+    #menu-bar {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    #content {
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .summary-item {
+      margin: 15px 0;
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background-color: white;
+    }
+
+    .time-range {
+      font-weight: bold;
+      color: #4a90e2;
+      margin-bottom: 8px;
+    }
+
+    .summary-text {
+      line-height: 1.5;
+    }
+
+    .see-more-btn {
+      background: none;
+      border: none;
+      color: #4a90e2;
+      cursor: pointer;
+      padding: 5px 0;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .see-more-btn:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+
+    .full-text {
+      display: none;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .preview-text {
+      margin-bottom: 8px;
+    }
+
+    #loading-indicator {
+      display: none;
+      font-weight: bold;
+      color: #4a90e2;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #take-notes-box {
+      margin-top: 20px;
+    }
+
+    #take-notes-box textarea {
+      font-family: 'Proxima Nova', sans-serif;
+      width: 100%;
+      height: 100px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 10px;
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Banner -->
+    <div id="banner"> </div>
+
+    <!-- Menu Bar -->
+    <div id="menu-bar">
+      <img id="menu-icon" src="Menu_Inactive.png" alt="Menu Icon" title="Menu">
+      <img id="summary-icon" src="Summary_Inactive.png" alt="Summary Icon" title="Summary">
+      <img id="track-icon" src="Track_Inactive.png" alt="Track Icon" title="Track">
+      <img id="save-icon" src="Save_Inactive.png" alt="Save Icon" title="Save">
+      <img id="dashboard-icon" src="Dashboard_Inactive.png" alt="Dashboard Icon" title="Dashboard">
+    </div>
+
+    <!-- Content Sections -->
+    <div id="content">
+      <!-- Page Information -->
+      <div id="page-title">Page title will be displayed here</div>
+      <div id="page-url">Page URL will be displayed here</div>
+
+      <!-- Summary Controls -->
+      <div id="summary-section">
+        <div class="summary-controls">
+          <button id="s-summary" class="summary-btn">Short Summary</button>
+          <button id="m-summary" class="summary-btn">Medium Summary</button>
+          <button id="l-summary" class="summary-btn">Long Summary</button>
+        </div>
+      </div>
+
+      <!-- Loading Indicator -->
+      <div id="loading-indicator">Generating summary... Please wait...</div>
+
+      <!-- Summaries will be displayed here -->
+      <div id="summaries-container"></div>
+
+      <!-- Take Notes Box -->
+      <div id="take-notes-box">
+        <textarea maxlength="1200" placeholder="Take your notes here (max 1200 words)..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include summarizer.js and index.js -->
+  <script src="summarizer.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
