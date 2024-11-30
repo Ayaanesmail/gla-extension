@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         console.log('Video ID:', videoId);
 
-        const response = await fetch('http://localhost:8000/summarize', {
+      const response = await fetch('http://35.223.216.52:8000/summarize', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 search_query: currentTab.title || ''
             })
         });
+
 
         if (!response.ok) {
             const errorData = await response.text();
