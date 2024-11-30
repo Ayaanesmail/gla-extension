@@ -128,48 +128,14 @@
     }
   </style>
 </head>
-<body>
-  <div id="app">
-    <!-- Banner -->
-    <div id="banner"> </div>
 
-    <!-- Menu Bar -->
-    <div id="menu-bar">
-      <img id="summary-icon" src="Summary_Inactive.png" alt="Summary Icon" title="Summary">
-      <img id="track-icon" src="Learn - Inactive.png" alt="Track Icon" title="Track">
-      <img id="save-icon" src="Quiz - Inactive.png" alt="Save Icon" title="Save">
-    </div>
 
-    <!-- Content Sections -->
-    <div id="content">
-      <!-- Page Information -->
-      <div id="page-title">Page title will be displayed here</div>
-      <div id="page-url">Page URL will be displayed here</div>
-
-      <!-- Summary Controls -->
-      <div id="summary-section">
-        <div class="summary-controls">
-          <button id="s-summary" class="summary-btn">Short Summary</button>
-          <button id="m-summary" class="summary-btn">Medium Summary</button>
-          <button id="l-summary" class="summary-btn">Long Summary</button>
-        </div>
-      </div>
-
-      <!-- Loading Indicator -->
-      <div id="loading-indicator">Generating summary... Please wait...</div>
-
-      <!-- Summaries will be displayed here -->
-      <div id="summaries-container"></div>
-
-      <!-- Take Notes Box -->
-      <div id="take-notes-box">
-        <textarea maxlength="1200" placeholder="Take your notes here (max 1200 words)..."></textarea>
-      </div>
+<div id="summary-section">
+    <div class="summary-controls">
+      <button id="s-summary" class="summary-btn">Short Summary</button>
+      <button id="m-summary" class="summary-btn">Medium Summary</button>
+      <button id="l-summary" class="summary-btn">Long Summary</button>
     </div>
   </div>
 
-  <!-- Include summarizer.js and index.js -->
-  <script src="summarizer.js"></script>
-  <script src="index.js"></script>
-</body>
 </html>

@@ -3,11 +3,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Define all icons and add event listeners for hover effects
   const icons = [
-    { id: 'menu-icon', active: 'Menu_Active.png', inactive: 'Menu_Inactive.png', fn: executeFeature1 },
     { id: 'summary-icon', active: 'Summary_Active.png', inactive: 'Summary_Inactive.png', fn: executeFeature2 },
-    { id: 'track-icon', active: 'Track_Active.png', inactive: 'Track_Inactive.png', fn: executeFeature3 },
-    { id: 'save-icon', active: 'Save_Active.png', inactive: 'Save_Inactive.png', fn: executeFeature4 },
-    { id: 'dashboard-icon', active: 'Dashboard_Active.png', inactive: 'Dashboard_Inactive.png', fn: executeFeature5 }
+    { id: 'track-icon', active: 'Learn - Active.png', inactive: 'Learn - Inactive.png', fn: executeFeature3 },
+    { id: 'save-icon', active: 'Quiz - Active.png', inactive: 'Quiz - Inactive.png', fn: executeFeature4 }
   ];
 
   icons.forEach(icon => {
@@ -58,6 +56,16 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById('s-summary').addEventListener('click', () => generateSummary('s'));
   document.getElementById('m-summary').addEventListener('click', () => generateSummary('m'));
   document.getElementById('l-summary').addEventListener('click', () => generateSummary('l'));
+
+  // Add event listener for the quiz button
+  document.getElementById('save-icon').addEventListener('click', () => {
+    loadQuizSection(); // Call the function to load the quiz section
+  });
+
+  // Add event listener for the summary button
+  document.getElementById('summary-icon').addEventListener('click', () => {
+    loadSummarySection(); // Call the function to load the summary section
+  });
 
   async function generateSummary(size) {
     console.log(`Generating ${size} summary...`);
@@ -164,6 +172,46 @@ document.addEventListener("DOMContentLoaded", function () {
         contentDiv.appendChild(summariesContainer);
     }
     summariesContainer.innerHTML = summaryHtml;
+  }
+
+  // Function to load the quiz section
+  function loadQuizSection() {
+    // Fetch the quiz.html content
+    fetch('quiz.html')
+        .then(response => response.text())
+        .then(data => {
+            // Clear existing content
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = data; // Load the quiz HTML content
+
+            // Optionally, you can also load the quiz.js script
+            const script = document.createElement('script');
+            script.src = 'quiz.js';
+            contentDiv.appendChild(script); // Append the quiz.js script
+        })
+        .catch(error => {
+            console.error('Error loading quiz section:', error);
+        });
+  }
+
+  // Function to load the summary section
+  function loadSummarySection() {
+    // Fetch the index.html content
+    fetch('index.html')
+        .then(response => response.text())
+        .then(data => {
+            // Clear existing content
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = data; // Load the index HTML content
+
+            // Optionally, you can also load the index.js script
+            const script = document.createElement('script');
+            script.src = 'index.js';
+            contentDiv.appendChild(script); // Append the index.js script
+        })
+        .catch(error => {
+            console.error('Error loading summary section:', error);
+        });
   }
 });
 
