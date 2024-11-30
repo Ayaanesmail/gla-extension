@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         console.log('Video ID:', videoId);
 
-      const response = await fetch('http://35.223.216.52:8000/summarize', {
+      const response = await fetch('http://35.223.216.53:8000/summarize', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
