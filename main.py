@@ -23,7 +23,7 @@ app = FastAPI()
 
 # Configure CORS
 app.add_middleware(
-     CORSMiddleware,
+     CORSMiddleware,
      allow_origins=["*"],  # For development only. In production, specify your extension's origin
      allow_credentials=True,
      allow_methods=["*"],
